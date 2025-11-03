@@ -10,27 +10,25 @@ public class Restaurant {
 		String mealCourse;
 		String[] courses = {};
 		
-		ICuisine cuisine;
+		ICuisine cuisine = null;
 		
 		if (choice.equalsIgnoreCase("Indian")) {
 			cuisine = new Indian();
-			System.out.println("Enter what you want (Starters/Main Course/Desserts) Indian:");
-			mealCourse = sc.nextLine();
-			courses = cuisine.showMenus(mealCourse);
-			for (String course : courses) {
-				System.out.println(course);
-			}
 		} else if (choice.equalsIgnoreCase("International")) {
 			cuisine = new International();
-			System.out.println("Enter what you want (Starters/Main Course/Desserts) International:");
-			mealCourse = sc.nextLine();
-			cuisine.showMenus(mealCourse);
-			courses = cuisine.showMenus(mealCourse);
+		} else {
+			System.out.println("No Cuisines present");
+		}
+		System.out.println("Enter what you want (Starters/Main Course/Desserts) Indian:");
+		mealCourse = sc.nextLine();
+		courses = cuisine.showMenus(mealCourse);
+		if(courses != null) {			
 			for (String course : courses) {
 				System.out.println(course);
 			}
 		} else {
-			System.out.println("No Cuisines present");
+			System.out.println("Please enter an option. Input cannot be NULL");
+			System.exit(0);
 		}
 	}
 }

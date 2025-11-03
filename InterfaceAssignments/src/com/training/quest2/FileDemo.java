@@ -5,17 +5,17 @@ public class FileDemo {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 		System.out.println("Enter the type of file extractor: Zip/Jar/Rar");
-		char choice = sc.next().charAt(0);
+		String choice = sc.nextLine();
 		
 		IExtractor extractor;
 		
-		if(choice == 'z' || choice == 'Z') {
+		if(choice.startsWith("z") || choice.startsWith("Z")) {
 			extractor = new ZipExtractor();
 			extractor.extractFiles("examples.zip");
-		} else if(choice == 'r' || choice == 'R') {
+		} else if(choice.startsWith("r") || choice.startsWith("R")) {
 			extractor = new RarExtractor();
 			extractor.extractFiles("examples.rar");
-		} else if(choice == 'j' || choice == 'J') {
+		} else if(choice.startsWith("j") || choice.startsWith("J")) {
 			extractor = new JarExtractor();
 			extractor.extractFiles("examples.jar");
 		} else {

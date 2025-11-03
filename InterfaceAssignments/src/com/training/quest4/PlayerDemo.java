@@ -8,19 +8,17 @@ public class PlayerDemo {
 		System.out.println("VLC / Windows Player");
 		String choice = sc.nextLine();
 		
-		IMediaPlayer player;
+		IMediaPlayer player = null;
 		
 		if (choice.equalsIgnoreCase("VLC")) {
 			player = new VLCMediaPlayer();
-			player.playVideo();
-			player.downloadMusic();
 		} else if (choice.equalsIgnoreCase("Windows Player")) {
 			player = new WindowsMediaPlayer11();
-			player.downloadMusic();
-			player.playVideo();
 		} else {
 			System.out.println("No such media player exists!");
 			System.exit(0);
 		}
+		player.playVideo();
+		player.downloadMusic();
 	}
 }

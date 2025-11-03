@@ -4,17 +4,17 @@ import java.util.*;
 public class Customer {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
-		System.out.println("Enter which mobile you want: Touch Screen or Basic ");
+		System.out.println("Enter which mobile you want: \nTS for Touch Screen or B for Basic ");
 		String choice = sc.nextLine();
 		
-		if(choice.equalsIgnoreCase("Touch Screen")) {
+		if(choice.equalsIgnoreCase("TS")) {
 			ISmartPhone smartPhone = new TouchScreenMobile();
 			smartPhone.showApps();
 			smartPhone.useCamera();
 			smartPhone.downloadMusic();
 			smartPhone.payBills("Prepaid");
 			ISmartPhone.brandInfo();
-		} else if (choice.equalsIgnoreCase("Basic")) {
+		} else if (choice.equalsIgnoreCase("B")) {
 			IFeaturePhone featurePhone = new BasicPhone();
 			featurePhone.call();
 			featurePhone.messaging();
