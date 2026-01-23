@@ -1,0 +1,2 @@
+Reading from a file
+and writing into another file
